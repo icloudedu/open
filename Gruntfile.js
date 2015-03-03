@@ -312,8 +312,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', function (target) {
     if (target !== 'watch') {
       grunt.task.run([
-        'concurrent:test',
-        'autoprefixer'
+        'concurrent:test'
       ]);
     }
 
@@ -328,7 +327,6 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
     'concat',
     'cssmin',
     'uglify',
@@ -342,10 +340,10 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'jade',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
     'concat',
     'cssmin',
     'uglify',
@@ -357,8 +355,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
+    //'newer:jshint',
+    //'test',
     'build'
   ]);
 };
