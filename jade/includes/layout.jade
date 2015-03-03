@@ -1,0 +1,46 @@
+include config
+include mixins
+
+block variables
+   - var curPage = homePage
+
+doctype html
+html
+   head
+      block head
+         meta(charset="utf-8")
+         title=  curPage.pageTitle
+         if curPage.keywords
+            meta(name="keywords",content=curPage.keywords)
+         if curPage.description
+            meta(name="description",content=curPage.description)
+      block css
+         link(href="favicon.ico" rel="shortcut icon")
+         // build:css css/alice.css
+         link(href="../spm_modules/alice-base/1.1.0/src/base.css" rel="styleSheet")
+         link(href="../spm_modules/alice-iconfont/1.1.0/index.css" rel="styleSheet")
+         link(href="../spm_modules/alice-grid/1.1.0/src/grid.css" rel="styleSheet")
+         link(href="../spm_modules/alice-animate/2.2.0/index.css" rel="styleSheet")
+         // endbuild
+         // build:css css/screen.css
+         link(href="css/screen.css" rel="styleSheet")
+         // endbuild
+         // build:js js/sea.js
+         script(src="../spm_modules/seajs/2.3.0/dist/sea.js")
+         // endbuild
+   body
+      // header begin
+      block header
+        .open-nav this is nav
+      // header end
+      // content begin
+      block content
+      // content end
+      // footer begin
+      block footer
+         p copyRight
+      // footer end
+      block js
+        // build:js js/common.js
+        script(src='js/common.js')
+        // endbuild

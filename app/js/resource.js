@@ -1,0 +1,5 @@
+/**
+ * resourcePage
+ */
+
+alert('resourcePage');

@@ -1,0 +1,12 @@
+extends includes/layout
+
+block variables
+   - var curPage = resourcePage
+
+block content
+   div  resourcePage
+
+block append js
+  // build:js  js/resource.js
+  script(src='js/resource.js')
+  // endbuild

@@ -1,0 +1,7 @@
+.idea
+.sass-cache
+node_modules
+spm_modules
+.tmp
+dist
+app/*.html
