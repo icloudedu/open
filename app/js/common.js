@@ -1,5 +1,5 @@
 /**
- * resourcePage
+ * commonPage
  */
 
 seajs.config({
