@@ -1,0 +1,226 @@
+//- 提交网站应用
+
+extends includes/layout
+
+block variables
+    - var curPage = commitWebsiteAppPage
+
+block content
+    .content
+        .banner
+            h1
+                i.banner-icon WEB
+                | 提交网站应用
+        .wrapper
+            .commit-step
+                ol.ui-step.ui-step-3
+                    li.ui-step-start.ui-step-active
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.ui-step-number 1
+                            span.ui-step-text 填写基本信息
+                    li
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.ui-step-number 2
+                            span.ui-step-text 填写应用信息
+                    li.ui-step-end
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.iconfont.ui-step-number &#61481;
+                            span.ui-step-text 完成
+
+            .commit-content
+                form.ui-form.commit-app-form(name='', method='post', action='', id='')
+                    // step-one
+                    fieldset.step-one
+                        legend 填写基本信息
+                        .ui-form-item
+                            label.ui-label(for='website-name')
+                                span.ui-form-required *
+                                | 网站应用名称：
+                            input.ui-input(type='text',name='website-name',id='website-name')
+                            p.ui-form-explain 2-40字符，审核过后不可修改；如：赶考网
+                        .ui-form-item
+                            label.ui-label(for='website-intro')
+                                span.ui-form-required *
+                                | 网站应用简介：
+                            textarea.ui-textarea(name='website-intro',id='website-intro')
+                            p.ui-form-explain 最少10个字符，最多200个字符，支持换行
+                        .ui-form-item
+                            label.ui-label(for='website-type')
+                                span.ui-form-required *
+                                | 网站类型：
+                            select.ui-select(name='website-super-type',id='website-super-type')
+                                option(value='')
+                                    | 主分类
+                                option(value='1')
+                                    | 小学
+                                option(value='2')
+                                    | 初中
+                                option(value='3')
+                                    | 高中
+                            select.ui-select(name='website-type',id='website-type')
+                                option(value='')
+                                    | 二级分类
+                                option(value='1')
+                                    | 语文
+                                option(value='2')
+                                    | 数学
+                                option(value='3')
+                                    | 英语
+                            p.ui-form-explain 请选择您的网站类型
+                        .ui-form-item
+                            label.ui-label(for='website-section')
+                                span.ui-form-required *
+                                | 适用学段：
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='website-section')
+                                |  幼儿
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='website-section')
+                                |  小学
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='website-section')
+                                |  初中
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='website-section')
+                                |  高中
+                            p.ui-form-explain 请选择适用学段
+                        .ui-form-item
+                            label.ui-label(for='website-city')
+                                span.ui-form-required *
+                                | 适用地市：
+                            select.ui-select.select-province(name='website-province')
+                                option(value='1')
+                                    | 全国
+                                option(value='2')
+                                    | 江苏省
+                            .select-city
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  全省
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  南京
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  徐州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  苏州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  无锡
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  常州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  镇江
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  扬州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  宿迁
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  泰州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  连云港
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  南通
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  盐城
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='website-city')
+                                    |  淮安
+                            p.ui-form-explain 请勾选适用地市
+                        .ui-form-item
+                            label.ui-label(for='website-tags')
+                                span.ui-form-required *
+                                | 网站标签：
+                            input.ui-input(type='text',name='website-tags',id='website-tags')
+                            p.ui-form-explain 描述网站的特点和属性，用分号隔开，最多10个；例如：幼教；视频；
+                        .ui-form-item
+                            label.ui-label(for='')
+                                span.ui-form-required *
+                                | 网站应用图片：
+                            .app-img-wrapper.fn-clear
+                                .app-img
+                                    img(src='img/QRcode.png',alt='',class='app-img-show')
+                                .app-img.ui-inputfile
+                                    a(href="javascript:void(0)",class="btn-selectfile")
+                                        span(class="btn-selectfile-icon") +
+                                        | 添加图片
+                                        input(type='checkbox',name='website-img-check',class='fn-hide')
+                                        input(type='file',name="website-img",id='website-img',class='input-file')
+                            p.ui-tiptext.ui-tiptext-message
+                                i.ui-tiptext-icon.iconfont &#xF046;
+                                | 图片尺寸为512px*512px的正方形图片，大小不超过300KB，格式为jpg、png均可。
+                            p.ui-form-explain 请上传应用图片
+                        .ui-form-item
+                            a#step-two.ui-button.ui-button-llblue 下一步
+
+                    // step-two
+                    fieldset.step-two.fn-hide
+                        legend 填写应用信息
+                        .ui-form-item
+                            label.ui-label(for='website-auth-url')
+                                span.ui-form-required *
+                                | 授权回调域：
+                            input.ui-input(type='text',name='website-auth-url',id='website-auth-url')
+                            p.ui-form-explain 请填写开发需要的合法域名，人人通登录成功后只能回调至该域名底下的页面
+                        .ui-form-item
+                            label.ui-label(for='website-url')
+                                span.ui-form-required *
+                                | 官网网址：
+                            input.ui-input(type='text',name='website-url',id='website-url')
+                            p.ui-form-explain 请填写官网网址
+                        .ui-form-item
+                            label.ui-label(for='')
+                                span.ui-form-required *
+                                | 网站信息登记表：
+                            p.ui-form-text
+                                | 请下载
+                                a(href='javascript:void(0)') 《人人通开放平台网站信息登记表》
+                                | 填写打印，并盖章后上传扫描件。
+                                br
+                                | 支持jpg、png、bmp格式。不超过2MB。
+                            p &nbsp;
+                            .select-file-wrapper.ui-inputfile
+                                a(href="javascript:void(0);",class="ui-button ui-button-lwhite btn-selectfile")
+                                    | 选择文件
+                                    input(type='checkbox',name='website-register-check',class='fn-hide')
+                                    input(type='file',name='website-register-table',id='website-register-table',class='input-file')
+                            p.ui-form-explain 请上传网站信息登记表
+                        .ui-form-item
+                            a#step-ok.ui-button.ui-button-llblue 下一步
+                            a#step-one.ui-button.step-back 返回上一步
+
+                // step-ok
+                .step-ok.fn-hide
+                    .commit-result.commit-success
+                        div.commit-result-icon
+                            i.ai-iconfont &#xe618;
+                        h2.commit-result-title 应用提交成功！
+                        p.commit-result-msg 我们将会在72小时以内完成信息审核工作。
+                        .generate-app-detail
+                            .generate-app-img
+                            .generate-app-name 赶考网
+                            .generate-app-id AppID：rrtw9d579c8445a04f
+                            .generate-app-secret AppSecret：d7c1a9e24c43a1f9e6a65b5900a3baa7
+                            .generate-app-notice 在审核通过前只允许调试用
+                        a(href="manage.html") 返回管理中心
+
+block append js
+    // build:js js/commitWebsiteApp.js
+    script(src='js/commitWebsiteApp.js')
+    // endbuild

@@ -44,9 +44,11 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/{,*/}*.html',
-          '.tmp/css/{,*/}*.css',
-          '<%= config.app %>/img/{,*/}*'
+          '<%= config.app %>/*.html',
+          '<%= config.app %>/css/*.{css,scss,sass}',
+          '<%= config.app %>/css/fonts/*',
+          '<%= config.app %>/img/*',
+          '<%= config.app %>/js/*.js'
         ]
       },
       jade: {
@@ -54,7 +56,7 @@ module.exports = function (grunt) {
         tasks: ['jade']
       },
       compass:{
-        files: ['<%= config.app %>/css/screen.{scss,sass}'],
+        files: ['<%= config.app %>/css/*.{scss,sass}'],
         tasks: ['compass']
       }
     },
@@ -184,7 +186,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/img',
-          src: '{,*/}*.{gif,jpeg,jpg,png}',
+          src: '**/*.{gif,jpeg,jpg,png}',
           dest: '<%= config.dist %>/img'
         }]
       }
@@ -195,7 +197,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.app %>/img',
-          src: '{,*/}*.svg',
+          src: '**/*.svg',
           dest: '<%= config.dist %>/img'
         }]
       }
@@ -233,7 +235,7 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>',
           src: [
             '*.{ico,png,txt}',
-            'img/{,*/}*.webp',
+            'img/**/*',
             '{,*/}*.html',
             'css/fonts/{,*/}*.*'
           ]
@@ -241,8 +243,10 @@ module.exports = function (grunt) {
       },
       spm: {
         files: [{
-          src: 'spm_modules/**/*',
-          dest: '<%= config.dist %>/'
+          expand: true,
+          cwd: './',
+          dest: '<%= config.dist %>/',
+          src: ['spm_modules/**/*']
         }]
       }
     },
@@ -266,7 +270,7 @@ module.exports = function (grunt) {
     jade: {
       compile: {
         options:{
-          pretty:true
+          pretty:'\t'
         },
         files: [
           {
@@ -326,7 +330,7 @@ module.exports = function (grunt) {
     'jade',
     'clean:dist',
     'useminPrepare',
-    'concurrent:dist',
+    'concurrent:server',
     'concat',
     'cssmin',
     'uglify',
@@ -345,11 +349,11 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'concat',
-    'cssmin',
-    'uglify',
+    //'cssmin',
+    //'uglify',
     'copy:dist',
     'copy:spm',
-    'rev',
+    //'rev',
     'usemin'
     // 'htmlmin'
   ]);

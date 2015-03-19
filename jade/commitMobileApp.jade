@@ -1,0 +1,316 @@
+//- 提交移动应用
+
+extends includes/layout
+
+block variables
+    - var curPage = commitMobileAppPage
+
+block content
+    .content
+        .banner
+            h1
+                i.banner-icon APP
+                | 提交移动应用
+        .wrapper
+            .commit-step
+                ol.ui-step.ui-step-3
+                    li.ui-step-start.ui-step-active
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.ui-step-number 1
+                            span.ui-step-text 填写基本信息
+                    li
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.ui-step-number 2
+                            span.ui-step-text 填写应用信息
+                    li.ui-step-end
+                        .ui-step-line -
+                        .ui-step-icon
+                            i.iconfont &#61487;
+                            i.iconfont.ui-step-number &#61481;
+                            span.ui-step-text 完成
+
+            .commit-content
+                form.ui-form.commit-app-form(name='', method='post', action='', id='')
+                    // step-one
+                    fieldset.step-one
+                        legend 填写基本信息
+                        .ui-form-item
+                            label.ui-label(for='mobile-name')
+                                span.ui-form-required *
+                                | 移动应用名称：
+                            input.ui-input(type='text',name='mobile-name',id='mobile-name')
+                            p.ui-form-explain 2-40字符，审核过后不可修改；如：猿题库
+                        .ui-form-item
+                            label.ui-label(for='mobile-intro')
+                                span.ui-form-required *
+                                | 移动应用简介：
+                            textarea.ui-textarea(name='mobile-intro',id='mobile-intro')
+                            p.ui-form-explain 最少10个字符，最多200个字符，支持换行
+                        .ui-form-item
+                            label.ui-label(for='mobile-type')
+                                span.ui-form-required *
+                                | 应用类型：
+                            select.ui-select(name='mobile-super-type',id='mobile-super-type')
+                                option(value='')
+                                    | 主分类
+                                option(value='1')
+                                    | 小学
+                                option(value='2')
+                                    | 初中
+                                option(value='3')
+                                    | 高中
+                            select.ui-select(name='mobile-type',id='mobile-type')
+                                option(value='')
+                                    | 二级分类
+                                option(value='1')
+                                    | 语文
+                                option(value='2')
+                                    | 数学
+                                option(value='3')
+                                    | 英语
+                            p.ui-form-explain 请选择您的应用类型
+                        .ui-form-item
+                            label.ui-label(for='mobile-section')
+                                span.ui-form-required *
+                                | 适用学段：
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='mobile-section')
+                                |  幼儿
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='mobile-section')
+                                |  小学
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='mobile-section')
+                                |  初中
+                            label.ui-label-inline
+                                input.ui-checkbox(value='',type='checkbox',name='mobile-section')
+                                |  高中
+                            p.ui-form-explain 请选择适用学段
+                        .ui-form-item
+                            label.ui-label(for='mobile-city')
+                                span.ui-form-required *
+                                | 适用地市：
+                            select.ui-select.select-province(name='mobile-province')
+                                option(value='1')
+                                    | 全国
+                                option(value='2')
+                                    | 江苏省
+                            .select-city
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  全省
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  南京
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  徐州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  苏州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  无锡
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  常州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  镇江
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  扬州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  宿迁
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  泰州
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  连云港
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  南通
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  盐城
+                                label.ui-label-inline
+                                    input.ui-checkbox(value='', type='checkbox', name='mobile-city')
+                                    |  淮安
+                            p.ui-form-explain 请勾选适用地市
+                        .ui-form-item
+                            label.ui-label(for='mobile-tags')
+                                span.ui-form-required *
+                                | 应用标签：
+                            input.ui-input(type='text',name='mobile-tags',id='mobile-tags')
+                            p.ui-form-explain 描述网站的特点和属性，用分号隔开，最多10个；例如：幼教；视频；
+                        .ui-form-item
+                            label.ui-label(for='')
+                                span.ui-form-required *
+                                | 移动应用图片：
+                            .app-img-wrapper.fn-clear
+                                .app-img
+                                    img(src='img/QRcode.png',alt='',class='app-img-show')
+                                .app-img.ui-inputfile
+                                    a(href="javascript:void(0)",class="btn-selectfile")
+                                        span(class="btn-selectfile-icon") +
+                                        | 添加图片
+                                        input(type='checkbox',name='mobile-img-check',class='fn-hide')
+                                        input(type='file',name="mobile-img",id='mobile-img',class='input-file')
+                            p.ui-tiptext.ui-tiptext-message
+                                i.ui-tiptext-icon.iconfont &#xF046;
+                                | 图片尺寸为512px*512px的正方形图片，大小不超过300KB，格式为jpg、png均可。
+                            p.ui-form-explain 请上传应用图片
+                        .ui-form-item
+                            a#step-two.ui-button.ui-button-llblue 下一步
+
+                    // step-two
+                    fieldset.step-two.fn-hide
+                        legend 填写应用信息
+                        .ui-form-item
+                            label.ui-label(for='mobile-auth-url')
+                                span.ui-form-required *
+                                | 授权回调域：
+                            input.ui-input(type='text',name='mobile-auth-url',id='mobile-auth-url')
+                            p.ui-form-explain 请填写开发需要的合法域名，人人通登录成功后只能回调至该域名底下的页面
+                        .ui-form-item
+                            label.ui-label(for='mobile-url')
+                                span.ui-form-required *
+                                | 官网网址：
+                            input.ui-input(type='text',name='mobile-url',id='mobile-url')
+                            p.ui-form-explain 请填写官网网址
+                        .ui-form-item
+                            label.ui-label(for='mobile-platform')
+                                span.ui-form-required *
+                                | 应用平台：
+                            label.ui-label-inline
+                                input.ui-checkbox(value='android', type='checkbox', name='mobile-platform',id='mobile-platform-android')
+                                |  Android
+                            .mobile-platform-detail.mobile-platform-android.fn-hide
+                                .ui-form-item
+                                    label.ui-label(for='')
+                                        span.ui-form-required *
+                                        | 上传应用安装包：
+                                    .select-file-wrapper.ui-inputfile
+                                            a(href="javascript:void(0);",class="ui-button ui-button-lwhite btn-selectfile")
+                                                | 选择安装包
+                                                input(type='checkbox',name='app-android-package',class='fn-hide')
+                                                input(type='file',name='',id='',class='input-file')
+                                    p.ui-form-explain 请上传应用安装包
+                                .ui-form-item
+                                    label.ui-label(for='')
+                                        span.ui-form-required *
+                                        | 应用截图（最少4张）：
+                                    .app-img-wrapper.fn-clear
+                                        .app-img
+                                            img(src='img/QRcode.png',alt='',class='app-img-show app-android-screenshot')
+                                            a.app-img-del(href="javascript:void(0)",title='删除此图片'): i.iconfont &#xF048;
+                                        .app-img
+                                            img(src='img/QRcode.png',alt='',class='app-img-show app-android-screenshot')
+                                            a.app-img-del(href="javascript:void(0)",title='删除此图片'): i.iconfont &#xF048;
+                                        .app-img
+                                            img(src='img/QRcode.png',alt='',class='app-img-show app-android-screenshot')
+                                            a.app-img-del(href="javascript:void(0)",title='删除此图片'): i.iconfont &#xF048;
+                                        .app-img
+                                            img(src='img/QRcode.png',alt='',class='app-img-show app-android-screenshot')
+                                            a.app-img-del(href="javascript:void(0)",title='删除此图片'): i.iconfont &#xF048;
+                                        .app-img.ui-inputfile
+                                            a(href="javascript:void(0)",class="btn-selectfile")
+                                                span(class="btn-selectfile-icon") +
+                                                | 添加图片
+                                                input(type='checkbox',name='app-android-screenshot',class='fn-hide')
+                                                input(type='file',name="",id='',class='input-file')
+                                    p.ui-form-explain 请上传4-5张截图（尺寸保持一致），单张图片不超过1M。截图不能小于320*480像素，推荐480*800像素，JPG、PNG格式。
+                                .ui-form-item
+                                    label.ui-label(for='app-android-screensize')
+                                        span.ui-form-required *
+                                        | 支持屏幕大小：
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-screensize')
+                                        |  全部
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-screensize')
+                                        |  480*320以上
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-screensize')
+                                        |  640*480以上
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-screensize')
+                                        |  960*720以上
+                                    p.ui-form-explain 请选择应用支持的屏幕大小
+                                .ui-form-item
+                                    label.ui-label(for='app-android-language')
+                                        span.ui-form-required *
+                                        | 支持语言：
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-language')
+                                        |  中文
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-language')
+                                        |  英文
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-language')
+                                        |  多语言
+                                    p.ui-form-explain 请选择应用支持的语言
+                                .ui-form-item
+                                    label.ui-label(for='app-android-price')
+                                        span.ui-form-required *
+                                        | 资费类型：
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-price')
+                                        |  免费
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-price')
+                                        |  增值服务收费
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-price')
+                                        |  内容付费
+                                    label.ui-label-inline
+                                        input.ui-raidobox(value='', type='radio', name='app-android-price')
+                                        |  部分内容付费
+                                    p.ui-form-explain 请选择应用的资费类型
+                            label.ui-label-inline
+                                input.ui-checkbox(value='ios', type='checkbox', name='mobile-platform',id='mobile-platform-ios')
+                                |  iOS
+                            .mobile-platform-detail.mobile-platform-ios.fn-hide
+                                .ui-form-item
+                                    label.ui-label(for='app-ios-appstore')
+                                        span.ui-form-required *
+                                        | AppStore下载地址：
+                                    input.ui-input(type='text',name='app-ios-appstore',id='app-ios-appstore')
+                                    p.ui-form-explain 请填写appstore应用详情页地址
+                                .ui-form-item
+                                    label.ui-label(for='app-ios-bundleid')
+                                        span.ui-form-required *
+                                        | Bundle ID：
+                                    input.ui-input(type='text',name='app-ios-bundleid',id='app-ios-bundleid')
+                                    p.ui-form-explain 请填写应用唯一标识
+                            p.ui-form-explain 请选择应用平台
+                        .ui-form-item
+                            a#step-ok.ui-button.ui-button-llblue 下一步
+                            a#step-one.ui-button.step-back 返回上一步
+
+                // step-ok
+                .step-ok.fn-hide
+                    .commit-result.commit-success
+                        div.commit-result-icon
+                            i.ai-iconfont &#xe618;
+                        h2.commit-result-title 应用提交成功！
+                        p.commit-result-msg 我们将会在72小时以内完成信息审核工作。
+                        .generate-app-detail
+                            .generate-app-img
+                            .generate-app-name 赶考网
+                            .generate-app-id AppID：rrtw9d579c8445a04f
+                            .generate-app-secret AppSecret：d7c1a9e24c43a1f9e6a65b5900a3baa7
+                            .generate-app-notice 在审核通过前只允许调试用
+                        a(href="manage.html") 返回管理中心
+
+block append js
+    // build:js js/commitMobileApp.js
+    script(src='js/commitMobileApp.js')
+    // endbuild

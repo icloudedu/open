@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* Reset
+================================== */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,input,button,textarea,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin: 0;padding: 0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+input,textarea,select,button {font-size:12px;font-weight:normal;font-family:inherit;}
+input[type="button"],input[type="submit"],select,button{cursor: pointer;}
+table {border-collapse: collapse;border-spacing: 0;}
+address,caption,cite,code,dfn,em,th,var {font-style: normal;font-weight: normal;}
+li {list-style: none;}
+caption,th {text-align: left;}
+q:before,q:after {content: '';}
+abbr,acronym {border: 0;font-variant: normal;}
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+fieldset,img,a img,iframe {border-width: 0;border-style: none;}
+iframe {overflow-x: hidden;}
+img {-ms-interpolation-mode: bicubic;}
+textarea {resize: vertical;overflow-y: auto;}
+legend {color: #000;}
+a {text-decoration: none;}
+hr {height: 0;}
+label {cursor: pointer;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display: block;}
+
+/* Open - common
+================================== */
+html,body {background-color: #fff;color: #555;font-family:"Microsoft YaHei",Tahoma, Verdana, Arial,SimSun,sans-serif;line-height: 1.333;font-size: 12px;}
+a {color: #51b7ec;}
+a:hover {text-decoration: underline; color: #1797db;}
+.hide { display: none; }
+.show {display: block;}
+.inline_block { display: inline-block; *display: inline; *zoom: 1; }
+.text_hide {line-height: 500px;overflow: hidden;}
+.float_left { float: left; }
+.align { margin: 0 auto; }
+.red { color: red; }
+.vi_hide { visibility: hidden; }
+input[type="text"]:focus, input[type="password"]:focus {outline: 0}
+
+.lay_top {overflow: hidden;height: 46px;background: #51b7ec;}
+.lay_top_inner {max-width: 640px;margin: 0 auto;min-width: 320px;width: auto!important;width: 640px;}
+.lay_top .logo {float: left;width: 300px;height: 46px;line-height:46px;margin-left:25px;_display:inline;background: url(../img/sprite.png) no-repeat 0 0;color:#fff;text-indent:45px;font-size:20px;}
+.lay_top .lat_top_other {float: right;margin-top: 15px;text-align: right;margin-right:25px;_display:inline;color: #cfe1ea;}
+.lay_top .lat_top_other a {color: #fff;}
+.lay_top .lat_top_other a:hover {color: #c4e6f9;}
+.lay_top .lat_top_other a,.lay_top .lat_top_other span {display: inline-block;}
+.lay_top .lat_top_other span {margin:0 5px;}
+.lay_top .lat_top_other .icon_help_white {display: inline-block;*display: inline;zoom:1;height: 11px;width: 11px;vertical-align: middle;margin-right: 5px;font-size: 0;background: url(../img/sprite.png)  0 -49px;}
+
+/* Open - loginPage
+================================== */
+#login_page { max-width: 640px; width: 640px; margin: 5px auto 0 auto; }
+#login_page .page_login { width: 415px; }
+#login_page .page_accredit { width: 210px; }
+.border_right { border-right: 1px dotted #e3e3e3; }
+
+.lay_accredit_con { margin: 22px 0 0 25px; *zoom: 1; }
+.cnt_wording { margin-bottom: 16px; line-height: 1.8; }
+.QRcode img{display:block;width:157px;height:157px;margin:0 auto;}
+
+.lay_login_form {margin: 3px 0 0 0;}
+.login{margin: 0 auto; width: 360px; position: relative;}
+.login .header {height: 30px; line-height:30px;color:#555; border-bottom: 1px solid #e2e2e2;  position: relative; }
+.login .header a{font-weight:bold;margin:0 5px;}
+.loginTips {position: absolute; height: 40px; z-index: 100; }
+.loginTips .error_tips { padding: 5px; border: 1px solid #dad699; background: #f9f5c7; position: absolute; bottom: 0; border-radius: 2px; width: 258px; left: 50px; }
+.loginTips .error_tips .error_logo { position: absolute; left: 3px; height: 18px; line-height: 18px; width: 18px; background: url(../img/icon_3_tiny.png) no-repeat 0 -162px; _background: url(../img/icon_3_8.png) no-repeat 0 -162px; }
+.loginTips .error_tips .err_m { display: inline-block; padding-left: 20px; line-height: 18px; color: #434343; vertical-align: middle; text-align: left; }
+.loginTips .loading_tips { display:none;text-align: center; height: 24px; position: absolute; top: 10px; width: 370px; color:#555;}
+.loginTips .loading_tips img{vertical-align:middle;}
+.web_login { width: 370px; position: relative; padding-bottom: 65px; }
+.web_login .tips { height: 40px; width: 270px; position: relative; margin: 0 auto; z-index: 11; }
+.web_login .login_form { width: 272px; margin: 0 auto; }
+.web_login .inputOuter { width: 272px; height: 42px; background: url(../img/icon_3_tiny.png) no-repeat -1px -1px; _background: url(../img/icon_3_8.png) no-repeat -1px -1px; }
+.web_login .inputOuter_focus { width: 272px; height: 42px; background: url(../img/icon_3_tiny.png) no-repeat -1px -45px; _background: url(../img/icon_3_8.png) no-repeat -1px -45px; }
+.web_login .inputstyle { width: 258px; position: relative; top: 2px; left: 2px; height: 18px; padding: 11px 0 11px 10px; line-height: 18px; border: 0; background: 0; color: #333; font-family: Verdana, Tahoma, Arial; font-size: 16px;}
+.web_login .input_tips, .web_login .input_tips_focus { position: absolute; top: 13px; _top: 15 px; left: 13px; font-size: 14px; line-height: 16px; color: #aaa; cursor: text; }
+.web_login .input_tips_focus { color: #ddd; }
+.web_login .uinArea { height: 55px; position: relative; z-index: 10; }
+.web_login .uin_del { width: 21px; height: 21px; cursor: pointer; position: absolute; right: 15px; top: 10px; background: url(../img/icon_3_tiny.png) no-repeat -116px -160px; _background: url(../img/icon_3_8.png) no-repeat -116px -160px;}
+.web_login .uin_del:hover { background-position: -139px -160px; }
+.web_login .pwdArea { height: 55px; position: relative; z-index: 3; }
+.web_login .lock_tips { display:none;position: absolute; top: 32px; left: -15px; height: 16px; padding: 5px; text-align: center; border: 1px solid #dad699; background: #f9f5c7; border-radius: 2px; color:#333;}
+.web_login .lock_tips .lock_tips_row { position: absolute; top: -6px; left: 25px; width: 12px; height: 6px; background: url(../img/icon_3_tiny.png) no-repeat -162px -168px; _background: url(../img/icon_3_8.png) no-repeat -162px -168px; }
+.web_login .verifyArea { height: 120px; position: relative; }
+.web_login .verifyinputArea { height: 55px; }
+.web_login .verifycode { color: #333; font-size: 16px; }
+.web_login .verifyimgArea { position: relative; height: 55px; cursor: pointer; }
+.web_login .verifyimgArea .verifyimg { height: 55px; width: 150px; position: absolute; left: 0; }
+.web_login .verifyimgArea .verifyimg_tips { position: absolute; left: 165px; top: 18px; color: #000; }
+.web_login .submit { position: relative; height: 40px; }
+.web_login .login_button { position: absolute; left: 0; outline: 0; }
+.web_login .login_button .btn { width: 115px; height: 35px; line-height: 35px; border: 0; font-size: 18px; font-weight: bold; color: #fff; cursor: pointer; background: url(../img/icon_3_tiny.png) no-repeat 0 -90px; _background: url(../img/icon_3_8.png) no-repeat 0 -90px; }
+.web_login .login_button:hover .btn { background-position: -116px -90px; }
+.web_login .login_button:hover { text-decoration: none; }
+.web_login .oauth_tips_div { margin-top: 20px; }
+.web_login .bottom {height: 16px;margin-bottom: 8px;width: 360px; position: absolute;bottom: 0;right: 10px;text-align: right;font-size: 12px;}
+.web_login .bottom .link {color: #666; }
+.web_login .bottom .dotted {color: #bfbfbf; margin: 0 5px;}
+
+/* Open - errorPage
+================================== */
+.oAuth_error {max-width:640px;width:640px;height:416px;margin:5px auto 0 auto;text-align:center;}
+.oAuth_error h1{font-size:80px;font-weight:bold;color:#08c;padding-top:110px;}
+.oAuth_error h4{margin:10px auto;font-size:20px;color:#666;width:70%;}
+.oAuth_error p{margin-top:40px;font-size:14px;color:#888;}
+.oAuth_error .back{}
+.page404{background:url(../img/page404.png) no-repeat top center;}
+.page500{background:url(../img/page500.png) no-repeat top center;}

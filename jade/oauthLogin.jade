@@ -1,0 +1,86 @@
+//- Oauth 授权登录
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="keywords",content="人人通登录、安全登录、网站接入、人人通开放平台")
+        meta(name="description",content="接入人人通，可实现与人人通各项服务的无缝连接，安全帐号登录体系，用户动态同步人人通各应用平台，调用人人通各业务服务。")
+        title  人人通开发平台 - 安全登录
+        link(href="favicon.ico" rel="shortcut icon")
+        link(href="css/oauthLogin.css" rel="styleSheet")
+    body
+        // header start
+        .lay_top
+            .lay_top_inner
+                h1.logo 人人通登录
+                .lat_top_other
+                    a(href="javascript:void(0);" target="_blank" title="什么是人人通登录")
+                        i.icon_help_white
+                        | 人人通登录
+                    span.line |
+                    a(href="http://www.jiaoyucard.com" target="_blank" title="教育卡管理中心") 教育卡管理中心
+        // header end
+        // content start
+        #login_page
+            .page_login.float_left.border_right
+                .lay_login_form
+                    .login#login
+                        #header.header
+                            | 教育应用
+                            a(href="javascript:void(0);") 泰微课
+                            | 请求使用你的人人通账号
+                        .loginTips
+                            // 错误提示
+                            .error_tips#error_tips
+                                span#error_logo.error_logo
+                                span#err_m.err_m 您还没有输入密码！
+                            // 登录提示
+                            .loading_tips#loading_tips
+                                span#loading_wording 登录中
+                                img#loading_img(src="img/load.gif" alt="")
+                        .web_login#web_login
+                            .tips#tips
+                            .login_form
+                                form#loginform(autocomplete="off" name="loginform" action="" method="post" target="_self")
+                                    .uinArea#uinArea
+                                        // focus样式，label和div的class变更为“*_focus”
+                                        label(class="input_tips_focus" id="uin_tips" for="u") 用户名/教育卡卡号
+                                        .inputOuter_focus
+                                            input(type="text" class="inputstyle" id="u" name="u" value="" tabindex="1" autofocus)
+                                            // 删除按钮
+                                            a(class="uin_del" id="uin_del" href="javascript:void(0);")
+                                    .pwdArea#pwdArea
+                                        label#pwd_tips.input_tips(for="p") 密码
+                                        .inputOuter
+                                            input#p.inputstyle.password(type="password", name="p", value="", maxlength="16", tabindex="2")
+                                        // 大写锁定提示
+                                        #caps_lock_tips.lock_tips
+                                            span.lock_tips_row
+                                            span
+                                    .verifyArea#verifyArea
+                                        #verifyinputArea.verifyinputArea
+                                            label#vc_tips.input_tips(for="verifycode") 验证码
+                                            .inputOuter
+                                                input#verifycode.inputstyle.verifycode(type="text", name="verifycode", value="", maxlength="5", tabindex="3")
+                                        #verifyimgArea.verifyimgArea
+                                            img#verifyimg.verifyimg(title="看不清，换一张", src="img/getimage.jpg")
+                                            a.verifyimg_tips(tabindex="4", href="javascript:void(0);") 看不清，换一张
+                                    .submit
+                                        a.login_button(href="javascript:void(0);")
+                                            input#login_button.btn(type="submit", tabindex="5", value="授权并登录")
+                                    .oauth_tips_div
+                                        p.oauth_tips
+                                            | 授权登录后表示你已同意
+                                            a(href="javascript:void(0);", target="_blank")  人人通账号服务协议
+                            #bottom_web.bottom
+                                a#forgetpwd.link(href="javascript:void(0);", target="_blank") 忘了密码？
+                                span.dotted |
+                                a.link(href="javascript:void(0);", target="_blank") 注册新帐号
+            .page_accredit.float_left
+                .lay_accredit_con
+                    p.cnt_wording 使用手机浏览器"扫一扫"下载人人通移动客户端，随时随地获取教育资讯
+                    p.QRcode
+                        img(src="img/QRcode.png" alt="")
+        // content end

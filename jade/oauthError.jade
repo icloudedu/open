@@ -1,0 +1,36 @@
+//- Oauth 授权登录失败404/500错误
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="keywords",content="人人通登录、安全登录、网站接入、人人通开放平台")
+        meta(name="description",content="接入人人通，可实现与人人通各项服务的无缝连接，安全帐号登录体系，用户动态同步人人通各应用平台，调用人人通各业务服务。")
+        title  人人通开发平台 - 安全登录
+        link(href="favicon.ico" rel="shortcut icon")
+        link(href="css/oauthLogin.css" rel="styleSheet")
+    body
+        // header start
+        .lay_top
+            .lay_top_inner
+                h1.logo 人人通登录
+                .lat_top_other
+                    a(href="javascript:void(0);" target="_blank" title="什么是人人通登录")
+                        i.icon_help_white
+                        | 人人通登录
+                    span.line |
+                    a(href="http://www.jiaoyucard.com" target="_blank" title="教育卡管理中心") 教育卡管理中心
+        // header end
+        // content start
+        .oAuth_error.page404
+            h1 404
+            h4 页面不存在！
+            p
+                a.back(href="oauthLogin.html") 返回
+        .oAuth_error.page500
+            h1 500
+            h4 服务器出现小错误，请稍后访问 : )
+            p
+                a.back(href="oauthLogin.html") 返回
+        // content end

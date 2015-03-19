@@ -1,0 +1,188 @@
+//
+// layout
+// --------------------------------------------------
+
+body {
+  background-color:$body-bg;
+  color:$text-color;
+  font-family:$font-family-cn;
+  font-size:$font-size-base;
+  line-height:$line-height-base;
+  text-align:center;
+}
+
+.wrapper {
+  width:$wrapper-width;
+  margin:0 auto;
+  text-align:left;
+}
+
+.header {
+  background: $header-bg;
+  height: $header-height;
+  border-bottom:3px $gray-lighter solid;
+  .logo{
+    width:240px;
+    height:62px;
+    background:url(../img/open.png) no-repeat;
+    margin:7px 15px 7px 0;
+    text-indent: -999999px;
+  }
+  .site-nav{
+    padding:12px 0 0 30px;
+    text-align:center;
+    li{
+      display:block;
+      float:left;
+      padding:0 10px;
+      a {
+        color:$gray;
+        i{
+          font-size:1.8em;
+          cursor:pointer;
+        }
+        &:hover{
+          text-decoration:none;
+          color:$brand-primary;
+        }
+        &.current{
+          color:$brand-primary;
+          font-weight:bold;
+          .ai-iconfont{
+            font-weight:normal;
+          }
+        }
+      }
+      &.site-nav-gap{
+        width:24px;
+        height:44px;
+        padding:0 15px;
+        .ai-iconfont{
+          font-size:30px;
+          float:left;
+          margin-top:10px;
+          display: block;
+          color:#999;
+        }
+      }
+    }
+  }
+  .welcome{
+    margin-top:22px;
+    .login-before{
+      li {
+        display:inline-block;
+        *display:inline;
+        margin-left:10px;
+      }
+      .btn-register{
+        padding:0 20px;
+        height:32px;
+        line-height: 32px;
+      }
+      .btn-login{
+        background-color:transparent;
+        border-color:$brand-primary;
+        color:$brand-primary;
+        &:hover{
+          background-color:$brand-primary;
+          color:#fff;
+        }
+      }
+    }
+    .login-after{
+      padding-top:8px;
+      li{
+        font-size:$font-size-small;
+        display:inline-block;
+        *display:inline;
+        border-right:1px #ccc solid;
+        padding:0 8px;
+        line-height:1;
+        &.login-user{
+          color:$brand-primary;
+        }
+        &.last{
+          padding-right:0;
+          border:0;
+        }
+        a{
+          color:$gray;
+          &:hover{
+            color:$brand-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  background-color:$body-bg;
+  padding-bottom:40px;
+  .banner {
+    background:$brand-primary url(../img/bannerBg.jpg) no-repeat bottom center;
+    text-align:center;
+    color:$text-color-white;
+    padding-bottom:150px;
+    *zoom:1;
+    h1{
+      padding-top:50px;
+      font-size:$font-size-h1+$font-size-h4;
+      .banner-icon{
+        font-style:normal;
+        margin-right:20px;
+        border:1px #fff solid;
+        border-radius:100%;
+        width:70px;
+        height:70px;
+        line-height:70px;
+        font-size:0.45em;
+        vertical-align:middle;
+        display:inline-block;
+      }
+    }
+  }
+  .wrapper {
+    border:1px $gray-lighter solid;
+    background-color:$wrapper-bg;
+    margin-top:-100px;
+  }
+}
+
+.main-side {
+  width:230px;
+  float:left;
+}
+.main-content {
+  margin-left:230px;
+  border-left: 1px $gray-lighter solid;
+  padding:30px 40px;
+  line-height:$line-height-base+0.5;
+  p{
+    margin-bottom:10px;
+  }
+}
+
+.footer{
+  height:$footer-height;
+  line-height: $footer-height;
+  background-color:$footer-bg;
+  color:lighten($gray-light,6.5%);
+  a {
+    color:lighten($gray-light,6.5%);
+    &:hover{
+      color:lighten($gray-light,6.5%);
+    }
+  }
+  .footer-link {
+    a {
+      border-right:1px lighten($gray-light,30%) solid;
+      padding:0 10px;
+    }
+    .last{
+      border:0;
+      padding-right:0;
+    }
+  }
+}

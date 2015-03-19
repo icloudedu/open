@@ -1,3 +1,5 @@
+//- layout
+
 include config
 include mixins
 
@@ -5,42 +7,96 @@ block variables
    - var curPage = homePage
 
 doctype html
-html
-   head
-      block head
-         meta(charset="utf-8")
-         title=  curPage.pageTitle
-         if curPage.keywords
-            meta(name="keywords",content=curPage.keywords)
-         if curPage.description
-            meta(name="description",content=curPage.description)
-      block css
-         link(href="favicon.ico" rel="shortcut icon")
-         // build:css css/alice.css
-         link(href="../spm_modules/alice-base/1.1.0/src/base.css" rel="styleSheet")
-         link(href="../spm_modules/alice-iconfont/1.1.0/index.css" rel="styleSheet")
-         link(href="../spm_modules/alice-grid/1.1.0/src/grid.css" rel="styleSheet")
-         link(href="../spm_modules/alice-animate/2.2.0/index.css" rel="styleSheet")
-         // endbuild
-         // build:css css/screen.css
-         link(href="css/screen.css" rel="styleSheet")
-         // endbuild
-         // build:js js/sea.js
-         script(src="../spm_modules/seajs/2.3.0/dist/sea.js")
-         // endbuild
-   body
-      // header begin
-      block header
-        .open-nav this is nav
-      // header end
-      // content begin
-      block content
-      // content end
-      // footer begin
-      block footer
-         p copyRight
-      // footer end
-      block js
-        // build:js js/common.js
-        script(src='js/common.js')
-        // endbuild
+<!--[if lt IE 7]>      <html class="ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+head
+  block head
+     meta(charset="utf-8")
+     meta(http-equiv="X-UA-Compatible",content="IE=edge")
+     title=  curPage.pageTitle
+     if curPage.keywords
+        meta(name="keywords",content=curPage.keywords)
+     if curPage.description
+        meta(name="description",content=curPage.description)
+  block css
+     link(href="favicon.ico",rel="shortcut icon")
+     // build:css css/alice.css
+     link(href="../spm_modules/alice-one/1.3.0/one-debug.css",rel="styleSheet")
+     link(href="../spm_modules/arale-dialog/1.5.1/src/dialog.css",rel="styleSheet")
+     // endbuild
+     // build:css css/screen.css
+     link(href="css/screen.css",rel="styleSheet")
+     // endbuild
+     // build:js js/sea.js
+     script(src="../spm_modules/seajs/2.3.0/dist/sea.js")
+     // endbuild
+body
+  // header begin
+  block header
+    .header
+        .wrapper
+            .logo.fn-left 人人通 - 开放平台
+            ul.site-nav.fn-left
+                li: a(href="index.html",class=curPage == homePage?'current':'')
+                    if curPage == homePage
+                        p: i.ai-iconfont &#xe60d;
+                    else
+                        p: i.ai-iconfont &#xe60c;
+                    | 首页
+                li.site-nav-gap
+                    i.ai-iconfont &#xe61a;
+                li: a(href="resource.html",class=curPage == resourcePage?'current':'')
+                    if curPage == resourcePage
+                        p: i.ai-iconfont &#xe614;
+                    else
+                        p: i.ai-iconfont &#xe612;
+                    | 资源中心
+                li.site-nav-gap
+                    i.ai-iconfont &#xe61a;
+                li: a(href="manage.html",class=curPage == managePage?'current':'')
+                    if curPage == managePage
+                        p: i.ai-iconfont &#xe613;
+                    else
+                        p: i.ai-iconfont &#xe616;
+                    | 管理中心
+                li.site-nav-gap
+                    i.ai-iconfont &#xe61a;
+                li: a(href="account.html",class=curPage == accountPage?'current':'')
+                    if curPage == accountPage
+                        p: i.ai-iconfont &#xe608;
+                    else
+                        p: i.ai-iconfont &#xe609;
+                    | 账号管理
+            .welcome.fn-right
+                .login-before
+                    ul
+                        li: a(href="register.html",class="ui-button ui-button-llblue btn-register") 注册
+                        li: a(href="#",class="ui-button ui-button-lwhite btn-login") 登录
+                .login-after.fn-hide
+                    ul
+                        li.login-user dicklgy@163.com
+                        li: a(href="#")
+                            i.iconfont &#xF026;
+                            |  通知
+                        li.last: a(href="#") 退出
+  // header end
+  // content begin
+  block content
+  // content end
+  // footer begin
+  block footer
+     .footer
+         .wrapper
+             .footer-link.fn-right
+                 a(href="#") 开发者协议
+                 a(href="#" class="last") 联系我们
+             .copyright
+                 | !{copyRight}
+                 a(href="http://www.miibeian.gov.cn",target="_blank")  #{beian}
+  // footer end
+  block js
+    // build:js js/common.js
+    script(src='js/common.js')
+    // endbuild

@@ -2,13 +2,18 @@
 @import "variables";
 @import "mixins";
 
-// Reset and dependencies
-@import "compass/reset";
-
 // Core CSS
+@import "layout";
+@import "common";
 
-// Components
+// Font
+@import "alice-iconfont";
 
-// Components JavaScript
+// Button
+@import "alice-button-override";
+@import "alice-form-override";
+@import "alice-dialog-override";
 
-// Utility classes
+// Pages
+@import "register";
+@import "manage";

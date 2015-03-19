@@ -1,0 +1,60 @@
+//
+// alice-button override
+// --------------------------------------------------
+
+.ui-button-llblue,
+.ui-button-mlblue,
+.ui-button-slblue {
+  color: #fff;
+  border:0;
+  background-color:$brand-primary;
+  &:hover{
+    background-color:darken($brand-primary, 8%);
+  }
+}
+
+
+a.ui-button-llblue,
+a.ui-button-mlblue,
+a.ui-button-slblue {
+  color:#fff;
+  &:hover{
+    color:#fff;
+  }
+}
+
+.ui-button-llblue {
+  height:38px;
+  padding:0 40px;
+}
+
+.ui-button-mlblue {
+  height:28px;
+}
+
+.ui-button-slblue {
+  padding: 0 12px;
+  height:24px;
+  font-size:12px;
+}
+
+a.ui-button-llblue {
+  line-height:38px;
+  height:38px;
+}
+
+a.ui-button-mlblue {
+  line-height:26px;
+  height:26px;
+}
+
+a.ui-button-slblue {
+  line-height:22px;
+  height:22px;
+}
+
+.ui-button{
+  &:active{
+    box-shadow:none;
+  }
+}

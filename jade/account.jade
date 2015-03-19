@@ -1,0 +1,26 @@
+//- 账号管理
+
+extends includes/layout
+
+block variables
+   - var curPage = accountPage
+
+block content
+    .content
+        .banner
+        .wrapper.fn-clear
+            .main-side
+                ul.side-nav
+                    li: a(href="#",class="current") 基本信息
+                    li: a(href="#") 修改密码
+            .main-content
+                .info-list
+                    .info-list-tit 注册邮箱：
+                    .info-list-det dicklgy@163.com
+                    .info-list-tit 真实姓名：
+                    .info-list-det 阿汤哥
+                    .info-list-tit 手机号码：
+                    .info-list-det 13501232940
+                    .info-list-tit 联系地址：
+                    .info-list-det 北京西城区西直门南小街
+                a(href="#",class="ui-button ui-button-llblue") 修改信息

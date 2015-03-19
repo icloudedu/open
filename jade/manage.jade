@@ -1,0 +1,94 @@
+//- 管理中心
+
+extends includes/layout
+
+block variables
+   - var curPage = managePage
+
+block content
+    .content
+        .banner
+        .wrapper
+            .ui-tab.app-category
+                .ui-button-dropdown
+                    a#dropdown-app.ui-button.ui-button-mwhite.ui-dbutton.ui-dbutton-white
+                        i.ui-dbutton-arrow.iconfont &#xF025;
+                        span.ui-dbutton-self 提交新应用
+                    ul#dropdown-app-list.ui-button-dropdown-middle.fn-hide
+                        li.ui-button-dropdown-item: a(href="commitWebsiteApp.html") 网站应用
+                        li.ui-button-dropdown-item: a(href="#") 网页应用
+                        li.ui-button-dropdown-item: a(href="commitMobileApp.html") 移动App
+                ul.ui-tab-items
+                    li.ui-tab-item.ui-tab-item-current: a(href="javascript:;") 网站应用
+                    li.ui-tab-item: a(href="javascript:;") 网页应用
+                    li.ui-tab-item: a(href="javascript:;") 移动App
+
+            .app-list
+                .app-nothing
+                    i.ai-iconfont &#xe61b;
+                    .app-nothing-explain
+                        | 您还没有提交任何应用，
+                        a(href='#dropdown-app',id='go-dropdown-app') 现在去提交
+                        | ！
+                ul.fn-clear
+                    li.app-list-item
+                        .app-intro
+                            .app-img
+                                a(href='#'): img(src='img/QRcode.png',alt='')
+                            .app-title
+                                a(href='#') 赶考网
+                            ul.app-attr
+                                li 分类：
+                                li 学段：
+                        .app-status
+                    li.app-list-item
+                        .app-intro
+                            .app-img
+                                a(href='#'): img(src='img/QRcode.png',alt='')
+                            .app-title
+                                a(href='#') 赶考网
+                            ul.app-attr
+                                li 分类：
+                                li 学段：
+                        .app-status.app-status-fail
+                    li.app-list-item
+                        .app-intro
+                            .app-img
+                                a(href='#'): img(src='img/QRcode.png',alt='')
+                            .app-title
+                                a(href='#') 赶考网
+                            ul.app-attr
+                                li 分类：
+                                li 学段：
+                        .app-status.app-status-pass
+                    li.app-list-item
+                        .app-intro
+                            .app-img
+                                a(href='#'): img(src='img/QRcode.png',alt='')
+                            .app-title
+                                a(href='#') 赶考网
+                            ul.app-attr
+                                li 分类：
+                                li 学段：
+                        .app-status.app-status-pass
+            .ui-paging.app-paging
+                a(class="ui-paging-prev" href="#")
+                    i(class="iconfont") &#xF039;
+                    | 上一页
+                a(href="#" class="ui-paging-item") 1
+                a(href="#" class="ui-paging-item ui-paging-current") 2
+                a(href="#" class="ui-paging-item") 3
+                a(href="#" class="ui-paging-item") 4
+                a(href="#" class="ui-paging-item") 5
+                span(class="ui-paging-ellipsis") ...
+                a(href="#" class="ui-paging-item") 24
+                a(class="ui-paging-next" href="#")
+                    i(class="iconfont") &#xF03A;
+                    | 下一页
+                span(class="ui-paging-info")
+                    span(class="ui-paging-bold") 5/7
+                    | 页
+block append js
+    // build:js js/manage.js
+    script(src='js/manage.js')
+    // endbuild

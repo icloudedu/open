@@ -1,0 +1,114 @@
+//
+// manage page
+// --------------------------------------------------
+
+.app-category{
+  padding:15px;
+  .ui-tab-items{
+    border-bottom-width: 2px;
+    .ui-tab-item{
+      top:2px;
+      a{
+        border:0;
+        border-bottom:2px #E5E5E5 solid;
+        border-radius: 0;
+        line-height: 50px;
+        height: 50px;
+        padding: 0 30px;
+        &:hover,&:active{
+          color:$brand-primary;
+          background:none;
+          border-bottom-color:$brand-primary;
+        }
+      }
+    }
+    .ui-tab-item-current {
+      a{
+        color:$brand-primary;
+        border-bottom:2px $brand-primary solid;
+      }
+    }
+  }
+  .ui-button-dropdown{
+    float:right;
+  }
+}
+
+.app-list{
+  padding:15px;
+  .app-nothing{
+    padding:0 40px 40px;
+    text-align:center;
+    .ai-iconfont{
+      font-size:$font-size-h1*10;
+      color:$brand-primary;
+      line-height:1;
+    }
+    .app-nothing-explain{
+      font-size:$font-size-h4;
+      color:$gray-light;
+    }
+
+  }
+  .app-list-item{
+     display:inline-block;
+     float:left;
+     width:46%;
+     margin:0 2% 3% 2%;
+     background-color:$body-bg;
+     border-radius:5px;
+     _display:inline;
+    position:relative;
+    .app-img{
+      float:left;
+      width:100px;
+      height:100px;
+      margin:0 0 20px -120px;
+      border:1px $gray-lighter solid;
+      border-radius:4px;
+      background:#fff;
+      img{
+        max-width:100px;
+        max-height:100px;
+        *width:100px;
+        *height:100px;
+      }
+    }
+    .app-intro{
+      padding:20px 20px 20px 140px;
+    }
+    .app-title{
+      font-size:$font-size-h4;
+      font-weight: 700;
+    }
+    .app-attr{
+      padding:10px 0 0 0;
+      color:$gray-light;
+      line-height: $line-height-base+0.3;
+    }
+    .app-status{
+      width:66px;
+      height:66px;
+      position: absolute;
+      left:0;
+      top:0;
+      background: url(../img/app-audit-status.gif) no-repeat;
+    }
+    .app-status-pass{
+      background-position: 0 -66px;
+    }
+    .app-status-fail{
+      background-position: 0 -132px;
+    }
+  }
+}
+
+.app-paging{
+  padding:20px 15px 40px;
+  a{
+    &.ui-paging-current,
+    &.ui-paging-item:hover{
+      background:#08c;
+    }
+  }
+}

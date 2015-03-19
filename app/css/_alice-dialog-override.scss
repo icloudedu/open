@@ -1,0 +1,16 @@
+//
+// alice-dialog override
+// --------------------------------------------------
+
+.ui-dialog{
+  text-align:left;
+  .ui-dialog-container{
+    padding:0 0 10px 0;
+    .ui-dialog-message{
+      margin-bottom:10px;
+    }
+    .ui-dialog-operation{
+      text-align:center;
+    }
+  }
+}

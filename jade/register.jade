@@ -1,0 +1,88 @@
+//- 用户注册
+
+extends includes/layout
+
+block variables
+    - var curPage = registerPage
+
+block content
+    .content
+        .banner
+            h1
+                i.banner-icon ID
+                | 注册账号
+        .wrapper
+            form.ui-form.register-form(name='', method='post', action='', id='')
+                fieldset
+                    legend 用户注册
+                    h3 账号信息
+                    .ui-form-item
+                        label.ui-label(for='email')
+                            span.ui-form-required *
+                            | 邮箱地址
+                        input.ui-input(type='text',name="email",id="email")
+                        p.ui-form-explain 请输入邮箱，如name@qq.com
+                    .ui-form-item
+                        label.ui-label(for='password')
+                            span.ui-form-required *
+                            | 密码
+                        input.ui-input(type='password',id="password",name="password")
+                        p.ui-form-explain 密码为字母，数字或者符号，最短6位，区分大小写
+                    .ui-form-item
+                        label.ui-label(for='password-confirmation')
+                            span.ui-form-required *
+                            | 再次密码
+                        input.ui-input(type='password',id="password-confirmation",name="password-confirmation")
+                        p.ui-form-explain 请再次输入密码
+                    h3 联系方式
+                    .ui-form-item
+                        label.ui-label(for='realname')
+                            span.ui-form-required *
+                            | 真实姓名
+                        input.ui-input(type='text',name="realname",id='realname',maxlength=20)
+                        p.ui-form-explain 请输入真实姓名
+                    .ui-form-item
+                        label.ui-label(for='cellphone')
+                            span.ui-form-required *
+                            | 手机
+                        input.ui-input(type='text',name='cellphone',id='cellphone')
+                        p.ui-form-explain 请输入您的手机号码
+                    .ui-form-item
+                        label.ui-label(for='address')
+                            span.ui-form-required *
+                            | 联系地址
+                        select#province.ui-select(name='province')
+                            option(value='')
+                                | 请选择省份
+                            option(value='江苏')
+                                | 江苏
+                            option(value='浙江')
+                                | 浙江
+                        select#city.ui-select(name='city')
+                            option(value='')
+                                | 请选择地市
+                            option(value='南京')
+                                | 南京
+                            option(value='徐州')
+                                | 徐州
+                        input.ui-input(type='text',name='address',id='address')
+                        p.ui-form-explain 请选择并填写您的联系地址
+                    .ui-form-item
+                        label.ui-label(for='checkcode')
+                            span.ui-form-required *
+                            | 验证码
+                        input.ui-input.ui-input-checkcode(type='text', data-explain='请输入右图中字符，不区分大小写。', maxlength='4', autocomplete='off', value='', name='checkcode',id='checkcode')
+                        img.ui-checkcode-imgcode-img(align='absMiddle', alt='请输入您看到的内容', src='https://omeo.alipay.com/service/checkcode?sessionID=82012ab6b1f4ed9e675fb9092a25cb3b&r=0.9321065918075809', title='点击刷新图片校验码')
+                        a(href='javascript:void(0)') 看不清，换一张
+                        .ui-form-explain 请输入右图中字符，不区分大小写。
+                    .ui-form-item
+                        label(for='agreement')
+                            input.ui-checkbox(name='agreement', type='checkbox',id='agreement')
+                            |  同意并遵守
+                            a.agreement(href="javascript:void(0)") 《人人通开发者服务协议》
+                    .ui-form-item
+                        a#commit-register.ui-button.ui-button-llblue 确认提交
+block append js
+    // build:js js/register.js
+    script(src='js/register.js')
+    // endbuild
